@@ -112,6 +112,12 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function maskEmail(value) {
+  const [name, domain] = String(value || "").split("@");
+  if (!name || !domain) return "";
+  return `${name.slice(0, 2)}***@${domain}`;
+}
+
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -220,6 +226,8 @@ const server = createServer(async (request, response) => {
         webhook: Boolean(FORWARD_URL),
         localFile: true,
         requireNotification: REQUIRE_NOTIFICATION,
+        toEmail: maskEmail(CONTACT_TO_EMAIL),
+        fromEmail: CONTACT_FROM_EMAIL,
       },
     });
     return;

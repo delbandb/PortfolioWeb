@@ -98,7 +98,7 @@ If deploying manually on Render:
 - Environment variables:
   - `CONTACT_HOST=0.0.0.0`
   - `VITE_CONTACT_ENDPOINT=/api/contact`
-  - `CONTACT_TO_EMAIL=delbandbehdadfar@yahoo.com`
+  - `CONTACT_TO_EMAIL=delbandbehdadfar96@gmail.com`
   - `CONTACT_ALLOWED_ORIGIN=https://delbandbehdadfar.dev`
   - `CONTACT_REQUIRE_NOTIFICATION=true`
   - `RESEND_API_KEY=your_backend_api_key`
@@ -129,7 +129,7 @@ During early testing, Resend's sandbox/onboarding sender may work only for limit
 
 If Resend returns an error saying it can only send testing emails to your own account, either:
 
-- Set `CONTACT_TO_EMAIL` to the Resend account email for immediate testing.
+- Set `CONTACT_TO_EMAIL=delbandbehdadfar96@gmail.com` for immediate testing.
 - Or verify `delbandbehdadfar.dev` in Resend, set the DNS records in Cloudflare, and use a sender such as `Portfolio Contact <contact@delbandbehdadfar.dev>`.
 
 ## Original repo areas you do not need for the frontend-only version
