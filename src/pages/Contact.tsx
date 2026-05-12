@@ -39,7 +39,6 @@ function buildMailtoUrl(form: FormState) {
 export default function Contact() {
   const [form, setForm] = useState<FormState>(initialForm);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
-  const [submitDetail, setSubmitDetail] = useState("");
 
   useEffect(() => {
     if (submitState !== "sent" && submitState !== "email" && submitState !== "error") return;
@@ -56,7 +55,6 @@ export default function Contact() {
 
     if (!CONTACT_ENDPOINT) {
       window.location.href = buildMailtoUrl(form);
-      setSubmitDetail("Abre el borrador y pulsa enviar en tu correo.");
       setSubmitState("email");
       return;
     }
@@ -77,27 +75,13 @@ export default function Contact() {
         }),
       });
 
-      const result = (await response.json().catch(() => null)) as null | { deliveredVia?: string[] };
-
       if (!response.ok) {
         throw new Error("Contact endpoint rejected the message.");
       }
 
-      const deliveredVia = result?.deliveredVia ?? [];
-      const sentToEmail = deliveredVia.includes("email");
-      const sentToWebhook = deliveredVia.includes("webhook");
-
       setForm(initialForm);
-      setSubmitDetail(
-        sentToEmail
-          ? "Recibirás el mensaje por email."
-          : sentToWebhook
-            ? "Recibirás el mensaje por el webhook configurado."
-            : "Mensaje guardado por el backend. Configura email o webhook para recibir alertas automáticas.",
-      );
       setSubmitState("sent");
     } catch {
-      setSubmitDetail("Revisa que el backend esté activo y que VITE_CONTACT_ENDPOINT sea correcto.");
       setSubmitState("error");
     }
   };
@@ -105,9 +89,9 @@ export default function Contact() {
   const statusMessage = {
     idle: "",
     sending: ">> TRANSMITIENDO MENSAJE...",
-    sent: `>> MENSAJE RECIBIDO. ${submitDetail}`,
-    email: `>> NO HAY BACKEND CONECTADO. ${submitDetail}`,
-    error: `>> NO SE PUDO ENVIAR. ${submitDetail}`,
+    sent: ">> MENSAJE ENVIADO CORRECTAMENTE. GRACIAS.",
+    email: ">> SE ABRIÓ UN BORRADOR DE EMAIL. PULSA ENVIAR PARA COMPLETARLO.",
+    error: ">> NO SE PUDO ENVIAR. ESCRÍBEME DIRECTAMENTE POR EMAIL.",
   }[submitState];
 
   const socials = [
@@ -135,20 +119,6 @@ export default function Contact() {
             >
               ENVIAR MENSAJE
             </h2>
-
-            <div
-              className="mb-5 rounded-lg px-3 py-2 text-xs leading-relaxed"
-              style={{
-                background: CONTACT_ENDPOINT ? "rgba(34,211,238,0.08)" : "rgba(236,72,153,0.08)",
-                border: CONTACT_ENDPOINT ? "1px solid rgba(34,211,238,0.24)" : "1px solid rgba(236,72,153,0.24)",
-                color: "rgba(255,255,255,0.58)",
-                fontFamily: "'Share Tech Mono', monospace",
-              }}
-            >
-              {CONTACT_ENDPOINT
-                ? "MODO: ENDPOINT CONECTADO"
-                : "MODO: EMAIL DIRECTO. PARA ENVÍO AUTOMÁTICO CONFIGURA VITE_CONTACT_ENDPOINT."}
-            </div>
 
             {statusMessage ? (
               <div

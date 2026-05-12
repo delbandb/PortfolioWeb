@@ -53,7 +53,7 @@ export default function Resume() {
     <PageLayout title="Currículum" subtitle="// REGISTRO_PROFESIONAL" accentColor="rgba(34, 211, 238, 0.6)">
       <div className="flex justify-end mb-6">
         <a
-          href="/DelbandBehdadfar_CV.pdf"
+          href="/delband-behdadfar-cv.pdf"
           download="DelbandBehdadfar_CV.pdf"
           className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
           style={{

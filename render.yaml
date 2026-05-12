@@ -16,3 +16,5 @@ services:
         value: /api/contact
       - key: CONTACT_ALLOWED_ORIGIN
         value: https://delbandbehdadfar.dev
+      - key: CONTACT_REQUIRE_NOTIFICATION
+        value: true

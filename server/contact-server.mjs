@@ -10,6 +10,7 @@ const FORWARD_URL = process.env.CONTACT_FORWARD_URL || "";
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "delbandbehdadfar@yahoo.com";
 const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "Portfolio Contact <onboarding@resend.dev>";
+const REQUIRE_NOTIFICATION = (process.env.CONTACT_REQUIRE_NOTIFICATION || (process.env.RENDER ? "true" : "false")).toLowerCase() === "true";
 const serverDir = fileURLToPath(new URL(".", import.meta.url));
 const publicDir = normalize(join(serverDir, "..", "dist"));
 const messagesDir = join(process.cwd(), "messages");
@@ -195,6 +196,9 @@ async function deliverNotifications(message) {
 
   if (emailResult) deliveredVia.push(emailResult);
   if (webhookResult) deliveredVia.push(webhookResult);
+  if (REQUIRE_NOTIFICATION && deliveredVia.length === 0) {
+    throw new Error("No email or webhook notification channel is configured.");
+  }
   if (deliveredVia.length === 0) deliveredVia.push("local-file");
 
   return deliveredVia;
@@ -215,6 +219,7 @@ const server = createServer(async (request, response) => {
         email: Boolean(RESEND_API_KEY),
         webhook: Boolean(FORWARD_URL),
         localFile: true,
+        requireNotification: REQUIRE_NOTIFICATION,
       },
     });
     return;
@@ -257,9 +262,10 @@ const server = createServer(async (request, response) => {
 
     sendJson(response, 200, { ok: true, deliveredVia });
   } catch (error) {
+    console.error("Contact submission failed:", error);
     sendJson(response, 500, {
       ok: false,
-      error: error instanceof Error ? error.message : "Unable to save contact message.",
+      error: "Unable to send contact message.",
     });
   }
 });
@@ -270,4 +276,5 @@ server.listen(PORT, HOST, () => {
   console.log(`Messages will be stored in ${messagesFile}`);
   console.log(`Email notifications: ${RESEND_API_KEY ? `enabled to ${CONTACT_TO_EMAIL}` : "disabled"}`);
   console.log(`Webhook forwarding: ${FORWARD_URL ? "enabled" : "disabled"}`);
+  console.log(`Require notification channel: ${REQUIRE_NOTIFICATION ? "enabled" : "disabled"}`);
 });
