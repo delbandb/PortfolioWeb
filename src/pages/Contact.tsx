@@ -95,7 +95,7 @@ export default function Contact() {
   }[submitState];
 
   const socials = [
-    { icon: <Github size={20} />, label: "GitHub", handle: "@delband_b", href: "https://github.com/delbandb", color: "#ffffff" },
+    { icon: <Github size={20} />, label: "GitHub", handle: "@delbandb", href: "https://github.com/delbandb", color: "#ffffff" },
     { icon: <Phone size={20} />, label: "Teléfono", handle: CONTACT_PHONE, href: `tel:${CONTACT_PHONE.replace(/\s/g, "")}`, color: "#1d9bf0" },
     { icon: <Mail size={20} />, label: "Email", handle: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}`, color: "#a855f7" },
   ];
