@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: delbandbehdadfar-portfolio
+    runtime: node
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: CONTACT_HOST
+        value: 0.0.0.0
+      - key: CONTACT_TO_EMAIL
+        value: delbandbehdadfar@yahoo.com
+      - key: VITE_CONTACT_ENDPOINT
+        value: /api/contact
+      - key: CONTACT_ALLOWED_ORIGIN
+        value: https://delbandbehdadfar.dev

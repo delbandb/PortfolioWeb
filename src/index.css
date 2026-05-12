@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --font-sans: var(--app-font-sans);
+  --font-mono: var(--app-font-mono);
+}
+
+:root {
+  --background: 222 47% 5%;
+  --foreground: 210 40% 95%;
+  --border: 217 32% 17%;
+  --app-font-sans: "Rajdhani", sans-serif;
+  --app-font-mono: "Share Tech Mono", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] antialiased;
+    font-family: "Rajdhani", sans-serif;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(34, 211, 238, 0.08) 0%, transparent 50%),
+      hsl(var(--background));
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  button {
+    font: inherit;
+  }
+}
+
+.nav-scroll {
+  scrollbar-width: none;
+}
+
+.nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-bg-image {
+  top: -58px;
+  bottom: auto;
+  height: calc(100% + 154px);
+  object-fit: cover;
+  object-position: 43% 58%;
+  transform: translateY(58px);
+  transform-origin: center center;
+}
+
+@media (max-width: 900px) {
+  .hero-bg-image {
+    object-position: 38% 58%;
+    transform: translateY(72px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 40px rgba(168, 85, 247, 0.1); }
+  50% { box-shadow: 0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(168, 85, 247, 0.2), 0 0 80px rgba(168, 85, 247, 0.1); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.15); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.scan-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(168, 85, 247, 0.01) 2px,
+    rgba(168, 85, 247, 0.01) 4px
+  );
+  z-index: 1;
+}
