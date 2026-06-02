@@ -5,7 +5,7 @@ const experience = [
   {
     role: "Desarrollador Full Stack (Prácticas)",
     company: "Aldallana formación y servicios informáticos S.L.",
-    period: "25/10/2025 - 25/01/2026",
+    period: "25/10/2025 - 15/04/2026",
     points: [
       "Desarrollo y mantenimiento de funcionalidades web en entorno full stack",
       "Participación en tareas de frontend y backend",
