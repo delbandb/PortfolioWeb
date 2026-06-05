@@ -45,21 +45,21 @@ const projects = [
   {
     name: "Portfolio Cyberdeck",
     description:
-      "Portfolio personal estilo cyberpunk con rutas modulares, contenido editable, diseño responsive, formulario de contacto configurable y experiencia visual inmersiva.",
+      "Portfolio personal estilo cyberpunk con rutas modulares, contenido editable, diseno responsive, formulario de contacto configurable y experiencia visual inmersiva.",
     tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
     color: "#22d3ee",
     status: "LIVE",
-    codeUrl: "",
+    codeUrl: "https://github.com/delbandb/PortfolioWeb",
     demoUrl: "",
   },
   {
     name: "BankOpsAI",
     description:
-      "Plataforma de automatización inteligente para operaciones bancarias inspirada en Pega. Gestiona el onboarding KYC de clientes con scoring de riesgo generado por IA, motor de reglas configurable, cola de revisión manual con trazabilidad de auditoría y panel de operaciones back-office.",
-  tech: ["FastAPI", " SQLAlchemy", "SQLite", "OpenAI", "React", "Next.js"],
+      "Plataforma de automatizacion inteligente para operaciones bancarias inspirada en Pega, con onboarding KYC, scoring de riesgo con IA, cola de revision manual y panel back-office.",
+    tech: ["FastAPI", "SQLAlchemy", "SQLite", "OpenAI", "React", "Next.js"],
     color: "#ec4899",
-    status: "En Desarrollo",
-    codeUrl: "",
+    status: "EN DESARROLLO",
+    codeUrl: "https://github.com/delbandb/BankOpsAI",
     demoUrl: "",
   },
 ];
