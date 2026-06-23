@@ -1,4 +1,4 @@
-import { Award, Shield, Star } from "lucide-react";
+import { Award, Star } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 
 const certificates = [
@@ -39,11 +39,11 @@ const certificates = [
     icon: <Award size={22} />,
   },
   {
-    title: "Introducción a Ciberseguridad",
-    issuer: "Cisco Networking Academy",
+    title: "Microsoft Azure AZ-204",
+    issuer: "Microsoft",
     credId: "",
     color: "#ec4899",
-    icon: <Shield size={22} />,
+    icon: <Star size={22} />,
   },
 ];
 

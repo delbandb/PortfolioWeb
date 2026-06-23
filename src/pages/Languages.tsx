@@ -5,9 +5,9 @@ const programmingLanguages = [
   { name: "Python",years: "2 años", progress: 80, color: "#3776ab" },
   { name: "TypeScript / JavaScript", years: "2 años", progress: 75, color: "#f7df1e" },
   { name: "Kotlin", years: "1 año", progress: 50, color: "#00add8" },
-  { name: "Java", years: "2 años", progress: 60, color: "#ce422b" },
+  { name: "Java", years: "2 años", progress: 80, color: "#ce422b" },
   { name: "C/C++", years: "1 año", progress: 40, color: "#00599c" },
-  { name: "SQL/SQLite", years: "2 años", progress: 70, color: "#336791" },
+  { name: "SQL/SQLite", years: "3 años", progress: 80, color: "#336791" },
 ];
 
 const spokenLanguages = [

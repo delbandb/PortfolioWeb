@@ -37,11 +37,11 @@ export default function About() {
               </h2>
             </div>
             <p className="text-white/70 leading-relaxed text-base" style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: "1rem" }}>
-              Soy un perfil junior con formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Administración y Finanzas, con interés en el desarrollo de software, aplicaciones multiplataforma, automatización y análisis de datos.
+              Perfil híbrido con formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Administración y Finanzas, con interés en el desarrollo de software, aplicaciones multiplataforma, automatización y análisis de datos.
 
-              Me interesa construir soluciones útiles, bien estructuradas y funcionales, combinando pensamiento técnico con una visión práctica y organizativa. He trabajado tanto en entornos administrativos como tecnológicos, lo que me ha permitido desarrollar capacidad de adaptación, aprendizaje rápido y resolución de problemas.
+              Me interesa construir soluciones útiles, bien estructuradas y funcionales, combinando el pensamiento técnico con una visión práctica y organizativa. He trabajado tanto en entornos administrativos como tecnológicos, lo que me ha permitido desarrollar una gran capacidad de adaptación, aprendizaje continuo y resolución de problemas.
 
-              Actualmente continúo desarrollando proyectos personales y ampliando conocimientos en tecnologías como Python, JavaScript/TypeScript, Kotlin, React, Linux y herramientas orientadas al desarrollo y análisis de datos.
+              Actualmente, continúo desarrollando proyectos personales y ampliando mis conocimientos en tecnologías como Python, JavaScript/TypeScript, Kotlin, React, Linux y herramientas orientadas al desarrollo de software y al análisis de datos.
             </p>
           </div>
 

@@ -155,7 +155,7 @@ export default function Home() {
             textShadow: "0 1px 6px rgba(0,0,0,0.95)",
           }}
         >
-          Perfil junior con formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Administración y Finanzas. 
+          Perfil híbrido con formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Administración y Finanzas.
           Interesado en desarrollo web, automatización, análisis de datos y soluciones tecnológicas orientadas a negocio.
         </p>
       </div>

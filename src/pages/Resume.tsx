@@ -13,14 +13,13 @@ const experience = [
     ],
   },
   {
-    role: "Administrativo - Gestión de flota",
+    role: "Analista BI & Administración de Datos",
     company: "Centauro Rent a car",
     period: "2023 - 2025",
     points: [
-      "Gestión documental y administrativa relacionada con flotas de vehículos",
-      "Seguimiento de procesos operativos y coordinación interna",
-      "Uso de herramientas de control de versiones y visualización de datos como PowerBI",
-      "Identificación de oportunidades de mejora en procesos mediante herramientas digitales",
+      "Extracción y transformación de datos mediante consultas SQL sobre Microsoft Dynamics NAV (Navision) — base de datos empresarial de gran volumen",
+      "Desarrollo de dashboards e informes ejecutivos en Power BI para seguimiento de KPIs operativos",
+      "Elaboración de informes semanales y mensuales para equipos directivos, orientados a la toma de decisiones",
     ],
   },
   {
@@ -35,6 +34,11 @@ const experience = [
 ];
 
 const education = [
+  {
+    degree: "Grado universitario en ciencia de datos e inteligencia artificial (Online)",
+    school: "Universidad Europea de Madrid",
+    period: "Actualidad",
+  },
   {
     degree: "FP Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)",
     school: "Instituto Nebrija",
